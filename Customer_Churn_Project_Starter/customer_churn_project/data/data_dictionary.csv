@@ -1,0 +1,28 @@
+Column,Description,DataType / Role,Guidance
+CustomerID,Unique anonymized customer identifier,ID / identifier,Unique; do not use as predictive feature
+Gender,Customer-reported gender category,Categorical,Check category counts; avoid over-interpreting sensitive demographic patterns
+SeniorCitizen,"Whether customer is a senior citizen (1=yes, 0=no)",Binary numeric,Keep as 0/1 or convert to category
+Partner,Whether customer has a partner,Categorical binary,Check Yes/No values
+Dependents,Whether customer has dependents,Categorical binary,Check Yes/No values
+TenureMonths,Number of months customer has been with the provider,Numeric integer,Inspect range; zero tenure is possible
+PhoneService,Whether phone service is subscribed,Categorical binary,Check service combinations
+MultipleLines,Whether multiple lines are subscribed; may indicate no phone service,Categorical,Keep 'No phone service' as a meaningful category
+InternetService,Internet plan type,Categorical,"Categories include Fiber optic, DSL, 5G Home, No"
+OnlineSecurity,Online security add-on status,Categorical,Keep 'No internet service' distinct from 'No'
+OnlineBackup,Online backup add-on status,Categorical,Contains a small number of missing values for cleaning practice
+DeviceProtection,Device protection add-on status,Categorical,Keep 'No internet service' distinct from 'No'
+TechSupport,Technical support add-on status,Categorical,Potentially useful predictor
+StreamingTV,TV streaming add-on status,Categorical,Keep 'No internet service' distinct from 'No'
+StreamingMovies,Movie streaming add-on status,Categorical,Keep 'No internet service' distinct from 'No'
+ContractType,Contract term,Categorical,Month-to-month / One year / Two year
+PaperlessBilling,Whether billing is paperless,Categorical binary,Check category counts
+PaymentMethod,Customer payment method,Categorical,Check class distribution
+MonthlyCharges,Approximate current monthly bill in currency units,Numeric decimal,Inspect outliers and distribution
+TotalCharges,Approximate cumulative charges over tenure,Numeric decimal,Related to tenure and monthly charges; assess redundancy
+SupportCallsLast90Days,Number of support calls in the last 90 days,Numeric integer,May be associated with service problems
+ComplaintRaised,Whether a complaint was raised,Categorical binary,Potential signal; review timing before use in real deployment
+AvgMonthlyDataUsageGB,Average monthly data usage in GB,Numeric decimal,Missing values are intentionally included
+AvgMonthlyCalls,Average monthly voice-call count,Numeric integer,Zero is expected for customers without phone service
+SatisfactionScore,Customer satisfaction score from 1 (low) to 5 (high),Ordinal numeric,Missing values are intentionally included
+DaysSinceLastContact,Days since last recorded customer contact,Numeric integer,Missing values are intentionally included
+Churn,Target label: whether customer churned (Yes/No),Target,Use as y; do not include as a feature
